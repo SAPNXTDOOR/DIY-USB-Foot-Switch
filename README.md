@@ -219,18 +219,9 @@ Only these files are required to run the app:
 ShortcutManager.exe
 config.txt
 settings.ini
-audio/ (optional)
+audio/SoundVolumeView.exe
 ```
 
----
-
-# 📷 Setup Guide
-
-![Setup Instructions](docs/setup.png)
-
-*(Place the screenshot from the documentation inside `docs/setup.png` in your repository.)*
-
----
 
 # 🖱 Usage
 
