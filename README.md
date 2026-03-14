@@ -92,7 +92,7 @@ Install the following tools:
 
 # Step 1: Hardware Build (DIY Foot Switch)
 
-You can build a dedicated macro switch using an old keyboard PCB.
+You can build a dedicated macro switch using an old keyboard PCB and a cheap foot pedal switch (like [this one on Amazon](https://a.co/d/0exTAZ0x)).
 
 1. Take the PCB from a **cheap membrane keyboard**.
 2. Plug the bare PCB into your computer via USB.
@@ -100,12 +100,6 @@ You can build a dedicated macro switch using an old keyboard PCB.
 4. Once you find the key you want (example: `Numpad *`), solder two wires to those pins.
 5. Connect the wires to your **external foot pedal switch**.
 
-Example foot switch:
-
-```
-Amazon example pedal
-https://a.co/d/0exTAZ0x
-```
 
 ---
 
@@ -119,9 +113,7 @@ global targetKey := "NumpadMult"
 
 Replace `"NumpadMult"` with the name of the key your PCB produced when you shorted the pins.
 
-You can find all AutoHotkey key names here:
-
-https://www.autohotkey.com/docs/v2/KeyList.htm
+You can find all AutoHotkey key names here: https://www.autohotkey.com/docs/v2/KeyList.htm
 
 ---
 
@@ -131,11 +123,8 @@ To ensure the shortcut **only triggers on your foot switch**, you must identify 
 
 ## 1️⃣ Run the Python Identifier
 
-Download and run the script:
+Download and run this script: https://github.com/SAPNXTDOOR/Keyboard-VID-and-PID-identifier/blob/main/keyboard_detector.py
 
-```
-Keyboard VID and PID Identifier
-```
 
 ## 2️⃣ Press the Foot Switch
 
