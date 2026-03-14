@@ -14,7 +14,6 @@ Unlike standard AutoHotkey scripts that trigger globally across all keyboards, t
   * ⌨️ **Macro Recording:** Record and playback complex keystroke combinations (with modifiers like Ctrl/Shift/Alt).
   * 🔊 **Change Output Device:** Instantly switch Windows audio outputs (requires `SoundVolumeView.exe`).
 * **Dynamic GUI:** A built-in graphical interface accessible from the System Tray to edit shortcuts, change timing delays, and manage admin/startup settings.
-* **Fully Portable:** Can be compiled into a standalone `.exe` and moved between computers.
 
 ## ⚠️ How it Works & Limitations
 
@@ -24,15 +23,20 @@ When you press the designated macro key (default: `Numpad *`), Windows will brie
 
 ## 🚀 Installation & Setup
 
-### 1. Prerequisites
-* **AutoHotkey v2** (if running the raw `.ahk` script).
-* If you are using the compiled `.exe` version, no installation is required! Just run it on any Windows PC.
+To make the script listen *only* to your custom foot switch and run without needing AHK installed on every PC, follow these hardware and software steps.
 
-### 2. Configure Your Hardware ID (Crucial Step)
-To make the script listen only to your specific device, you must find its Hardware ID (`VID` and `PID`) and paste it into the code.
+### Prerequisites
+* [AutoHotkey v2](https://www.autohotkey.com/) installed on your PC.
+* [Python](https://www.python.org/downloads/) installed on your PC.
 
-1. Find your device's Hardware ID. You can find this in Windows Device Manager (under Human Interface Devices -> Properties -> Details -> Hardware Ids), or by using an AHK/Python Raw Input scanner.
-2. Open `final.ahk` in a text editor.
-3. Locate this line near the top of the script:
+### Step 1: Hardware Build (DIY Foot Switch)
+You can build a dedicated macro switch by recycling an old keyboard and wiring it to an external foot pedal (like [this one on Amazon](https://a.co/d/0exTAZ0x)).
+1. Take the printed circuit board (PCB) from an old, cheap membrane keyboard.
+2. Plug the bare PCB into your computer via USB. Use a wire to manually short any two pins on the board to see which key it registers on your computer.
+3. Solder two wires to those specific pins and connect them to your external foot switch.
+
+### Step 2: Configure the Target Key
+1. Open `final.ahk` in a text editor.
+2. Find the following line near the top:
    ```autohotkey
-   global targetDeviceID := "\\?\HID#VID_04F3&PID_152E"
+   global targetKey := "NumpadMult"
